@@ -41,8 +41,8 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'ui.window' = { } # ?
 
 'ui.text' = { } # Default text color
-'ui.text.focus' = { } # ?
-'ui.text.info' = { } # ?
+'ui.text.focus' = { } # Selection highlight in buffer-picker or file-picker
+'ui.text.info' = { } # Info popup contents (space mode menue)
 
 'ui.cursor' = { }
 'ui.cursor.insert' = { } # The cursor in insert mode (i)
@@ -58,11 +58,11 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'ui.statusline' = { } # Status line
 'ui.statusline.inactive' = { } # Status line in unfocused buffers
 
-'ui.menu' = { } # autocomplete menu
-'ui.menu.selected' = { } # selected autocomplete item
+'ui.menu' = { } # Autocomplete menu
+'ui.menu.selected' = { } # Selected autocomplete item
 
 'ui.popup' = { } # Documentation popups (space-k)
-'ui.popup.info' = { } # ?
+'ui.popup.info' = { } # Info popups box (space mode menue)
 
 
 # SYNTAX HIGHLIGHTING ==============================
