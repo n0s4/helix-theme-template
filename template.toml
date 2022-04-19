@@ -1,6 +1,6 @@
 # Template document for helix color schemes
 # See also: https://docs.helix-editor.com/themes.html
-# 
+#
 # NOTE: not all keys are necessary for example: ui.cursor.insert will default to ui.cursor
 # if you want to comment it out
 #
@@ -40,17 +40,20 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'ui.background' = { } # Default background color
 'ui.window' = { } # ?
 
+'ui.gutter' = { } # Left gutter for diagnostics and breakpoints
+
 'ui.text' = { } # Default text color
 'ui.text.focus' = { } # Selection highlight in buffer-picker or file-picker
 'ui.text.info' = { } # Info popup contents (space mode menue)
 
-'ui.cursor' = { }
+'ui.cursor' = { } # Non primary cursors in multi curosr situation (shift-c)
 'ui.cursor.insert' = { } # The cursor in insert mode (i)
 'ui.cursor.select' = { } # The cursor in select mode (v)
 'ui.cursor.match' = { } # The matching parentheses of that under the cursor
+'ui.cursor.primary' = { } # The primary cursor in a multi cursor situation (shift-c)
 
 'ui.selection' = { } # All currently selected text
-'ui.selection.primary' # The primary selection when there are multiple
+'ui.selection.primary' = { } # The primary selection when there are multiple
 
 'ui.linenr' = { } # Line numbers
 'ui.linenr.selected' = { } # Current line number
@@ -58,18 +61,29 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'ui.statusline' = { } # Status line
 'ui.statusline.inactive' = { } # Status line in unfocused buffers
 
+'ui.help' = { } # Help popup eg. command mode (:)
+
+'ui.highlight' = { } # selectet contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b)
+
 'ui.menu' = { } # Autocomplete menu
 'ui.menu.selected' = { } # Selected autocomplete item
 
 'ui.popup' = { } # Documentation popups (space-k)
-'ui.popup.info' = { } # Info popups box (space mode menue)
+'ui.popup.info' = { } # Info popups box (space mode menu)
 
 
 # SYNTAX HIGHLIGHTING ==============================
 # All the keys here are Treesitter scopes
 
+'attribute' = { }
+'escape' = { }
+'module' = { }
+'property' = { }
+'special' = { }
+
 'type' = { } # Variable type, like integer or string, including program defined classes, structs etc.
 'type.builtin' = { } # Language provided types, e.g `integer`, `string`, `char`...
+'type.enum.variant' = { }
 
 'constructor' = { } # Constructor method for a class or struct
 
@@ -78,6 +92,7 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'constant.builtin.boolean' = { } # True or False
 'constant.character' = { } # Constant of character type
 'constant.character.escape' = { } # ...?
+'constant.numeric' = { }
 'constant.number'  = { } # constant integer or float value
 'constant.number.integer' = { } # constant integer value
 'constant.number.float' = { } # constant float value
@@ -106,7 +121,7 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'punctuation.delimeter' = { } # Commas and colons
 'punctuation.bracket' = { } # Parentheses, angle brackets...
 
-'keyword' # Language reserved keywords
+'keyword' = {} # Language reserved keywords
 'keyword.control' = { } # Control keywords
 'keyword.control.conditional' = { } # 'if', 'else', 'elif'
 'keyword.control.repeat' = { } # 'for', 'while', 'loop'
@@ -133,11 +148,13 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 # Markup ==============================
 # Colors for markup languages, like markdown or XML
 
-'markup.heading' = { }
-'markup.heading.marker' # ?
-'markup.heading.1' = { }
-# ... (2 - 5)
-'markup.heading.6' = { }
+'markup.heading.1' = { } # markdown heading 1 color
+'markup.heading.2' = { } # markdown heading 2 color
+'markup.heading.3' = { } # markdown heading 3 color
+'markup.heading.4' = { } # markdown heading 4 color
+'markup.heading.5' = { } # markdown heading 5 color
+'markup.heading.6' = { } # markdown heading 6 color
+'markup.heading.marker' = { } # hashtag color on markdown headings
 
 'markup.list' = { }
 'markup.list.numbered' = { } # Numbered list
@@ -153,10 +170,6 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 
 'markup.quote' = { }
 
-'markup.raw' = { } # ?
-'markup.raw.inline' = { } # ?
-'markup.raw.block' = { } # ?
-
 
 # Markup - Interface ==============================
 # "These scopes are used for theming the editor interface."
@@ -165,12 +178,13 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'markup.normal.completion' = { } # "for completion doc popup ui"
 'markup.normal.raw' = { } # "for hover popup ui"
 
-'markup.heading' = { } # ?
+'markup.heading' = { } #
 'markup.heading.completion' = { } # "for completion doc popup ui"
 'markup.heading.raw' = { } # "for hover popup ui"
 
 'markup.raw' = { } # ?
-'markup.raw.inline' = { } # ?
+'markup.raw.block' = { } # markdown code block (```)
+'markup.raw.inline' = { } # markdwon inline code (`<code>`)
 'markup.raw.inline.completion' = { } # ?
 'markup.raw.inline.hover' = { } # ?
 
@@ -184,5 +198,5 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 
 
 [palette] # Define your custom colors here.
-# 'color' = '#ffffff'
+color = '#ffffff'
 
