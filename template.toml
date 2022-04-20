@@ -58,6 +58,11 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'ui.linenr' = { } # Line numbers
 'ui.linenr.selected' = { } # Current line number
 
+'ui.virtual' # Namespace for additions to the edit area
+'ui.virtual.ruler' = { } # Vertical rulers (colored columns in edit area)
+'ui.virtual.whitespace' = { } # Whitespace markers in edit area
+'ui.virtual.indent-guide' = { } # Indentation guides
+
 'ui.statusline' = { } # Status line
 'ui.statusline.inactive' = { } # Status line in unfocused buffers
 
