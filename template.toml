@@ -80,11 +80,11 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 # SYNTAX HIGHLIGHTING ==============================
 # All the keys here are Treesitter scopes
 
-'attribute' = { }
-'escape' = { }
-'module' = { }
 'property' = { }
 'special' = { }
+'module' = { } 
+'attribute' = { }
+'attributes' = { } # llvm highlights
 
 'type' = { } # Variable type, like integer or string, including program defined classes, structs etc.
 'type.builtin' = { } # Language provided types, e.g `integer`, `string`, `char`...
