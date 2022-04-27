@@ -45,6 +45,7 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 'ui.virtual' = { } # Namespace for additions to the editing area.
 'ui.virtual.ruler' = { } # Vertical rulers (colored columns in editing area).
 'ui.virtual.whitespace' = { } # Whitespace markers in editing area.
+# NOTE: Indent guides aren't yet added at the time of writing, but will be soon.
 'ui.virtual.indent-guide' = { } # Indentation guides.
 
 'ui.statusline' = { } # Status line.
@@ -67,8 +68,7 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 'property' = { }
 'special' = { }
 'module' = { } 
-'attribute' = { }
-'attributes' = { } # LLVM highlights.
+'attribute' = { } # Class attributes, html tag attributes.
 
 'type' = { } # Variable type, like integer or string, including program defined classes, structs etc..
 'type.builtin' = { } # Primitive types of the language (string, int, float).
