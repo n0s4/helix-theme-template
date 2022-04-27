@@ -38,7 +38,7 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 # For styling helix itself.
 
 'ui.background' = { } # Default background color
-'ui.window' = { } # ?
+'ui.window' = { } # Window border between splits
 
 'ui.gutter' = { } # Left gutter for diagnostics and breakpoints
 
