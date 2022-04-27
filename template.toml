@@ -6,10 +6,6 @@
 #
 # Glossary:
 # status bar: the strip at the bottom of the screen, showing mode, file name, etc.
-# gutter: the line below the status bar
-#
-# Most lines have a comment describing what it relates to,
-# unless they are very self-explanatory.
 #
 # Comments with a '?' are ones I haven't figured out yet.
 #
@@ -28,7 +24,7 @@
 # GENERAL ==============================
 
 warning = { } # Editor warnings
-error = { } # Editor errors, like mis-typing a command; try typing asdf into command mode
+error = { } # Editor errors, like mis-typing a command
 info = { } # Code diagnostic info in gutter (LSP)
 # ? Difference between info and hint ?
 hint = { } # Code diagnostics hint in gutter (LSP)
@@ -44,13 +40,13 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 
 'ui.text' = { } # Default text color
 'ui.text.focus' = { } # Selection highlight in buffer-picker or file-picker
-'ui.text.info' = { } # Info popup contents (space mode menue)
+'ui.text.info' = { } # Info popup contents (space mode menu)
 
-'ui.cursor' = { } # Non primary cursors in multi curosr situation (shift-c)
+'ui.cursor' = { } # Fallback cursor colour, also non-primary cursors when there are multiple (shift-c)
+'ui.cursor.primary' = { } # The primary cursor when there are multiple (shift-c)
 'ui.cursor.insert' = { } # The cursor in insert mode (i)
 'ui.cursor.select' = { } # The cursor in select mode (v)
 'ui.cursor.match' = { } # The matching parentheses of that under the cursor
-'ui.cursor.primary' = { } # The primary cursor in a multi cursor situation (shift-c)
 
 'ui.selection' = { } # All currently selected text
 'ui.selection.primary' = { } # The primary selection when there are multiple
@@ -58,17 +54,17 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'ui.linenr' = { } # Line numbers
 'ui.linenr.selected' = { } # Current line number
 
-'ui.virtual' # Namespace for additions to the edit area
+'ui.virtual' = { } # Namespace for additions to the edit area
 'ui.virtual.ruler' = { } # Vertical rulers (colored columns in edit area)
 'ui.virtual.whitespace' = { } # Whitespace markers in edit area
 'ui.virtual.indent-guide' = { } # Indentation guides
 
 'ui.statusline' = { } # Status line
-'ui.statusline.inactive' = { } # Status line in unfocused buffers
+'ui.statusline.inactive' = { } # Status line in unfocused windows
 
-'ui.help' = { } # Help popup eg. command mode (:)
+'ui.help' = { } # `:command` descriptions above the command line
 
-'ui.highlight' = { } # selectet contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b)
+'ui.highlight' = { } # selected contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b)
 
 'ui.menu' = { } # Autocomplete menu
 'ui.menu.selected' = { } # Selected autocomplete item
@@ -88,7 +84,7 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 
 'type' = { } # Variable type, like integer or string, including program defined classes, structs etc.
 'type.builtin' = { } # Language provided types, e.g `integer`, `string`, `char`...
-'type.enum.variant' = { }
+'type.enum.variant' = { } # A variant of an enum
 
 'constructor' = { } # Constructor method for a class or struct
 
@@ -96,14 +92,14 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'constant.builtin' = { } # Special constants like `true`, `false`, `none`, etc.
 'constant.builtin.boolean' = { } # True or False
 'constant.character' = { } # Constant of character type
-'constant.character.escape' = { } # ...?
+'constant.character.escape' = { } # escape codes like \n
 'constant.numeric' = { }
 'constant.number'  = { } # constant integer or float value
 'constant.number.integer' = { } # constant integer value
 'constant.number.float' = { } # constant float value
 
 'string' = { } # String literal
-'string.regexp' = { } # Regular expressions
+'string.regexp' = { } # Regular expression literal
 'string.special' = { } # Strings containing a path, URL, etc.
 'string.special.path' = { } # String containing a file path
 'string.special.url' = { } # String containing a web URL
@@ -120,13 +116,13 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 'variable.other.member' = { } # Fields of composite data types (e.g. structs, unions)
 'variable.function' = { } # ?
 
-'label' = { } # ?
+'label' = { } # Loop labels in rust
 
 'punctuation' = { } # (){}[]:;,.
 'punctuation.delimeter' = { } # Commas and colons
 'punctuation.bracket' = { } # Parentheses, angle brackets...
 
-'keyword' = {} # Language reserved keywords
+'keyword' = { } # Language reserved keywords
 'keyword.control' = { } # Control keywords
 'keyword.control.conditional' = { } # 'if', 'else', 'elif'
 'keyword.control.repeat' = { } # 'for', 'while', 'loop'
@@ -153,43 +149,42 @@ diagnostic = { } # Code diagnostics in editing area (LSP)
 # Markup ==============================
 # Colors for markup languages, like markdown or XML
 
-'markup.heading.1' = { } # markdown heading 1 color
-'markup.heading.2' = { } # markdown heading 2 color
-'markup.heading.3' = { } # markdown heading 3 color
-'markup.heading.4' = { } # markdown heading 4 color
-'markup.heading.5' = { } # markdown heading 5 color
-'markup.heading.6' = { } # markdown heading 6 color
-'markup.heading.marker' = { } # hashtag color on markdown headings
+'markup.heading.1' = { } # Markdown heading 1 color
+'markup.heading.2' = { } # Markdown heading 2 color
+'markup.heading.3' = { } # Markdown heading 3 color
+'markup.heading.4' = { } # Markdown heading 4 color
+'markup.heading.5' = { } # Markdown heading 5 color
+'markup.heading.6' = { } # Markdown heading 6 color
+'markup.heading.marker' = { } # Hashtag color on markdown headings
 
 'markup.list' = { }
 'markup.list.numbered' = { } # Numbered list
 'markup.list.unnumbered' = { } # Bullet point list
 
-'markup.bold' = { }
-'markup.italic' = { }
+'markup.bold' = { } # Bold text
+'markup.italic' = { } # Italicised text
 
 'markup.link' = { }
-'markup.link.url' = { } # "Urls pointed to by links"
-'markup.link.label' = { } # "Non-URL link references"
-'markup.link.text' = { } # "URL and image descriptions in links"
+'markup.link.url' = { } # Urls pointed to by links
+'markup.link.label' = { } # Non-URL link references
+'markup.link.text' = { } # URL and image descriptions in links
 
-'markup.quote' = { }
+'markup.quote' = { } # `> Quotes` in markdown
 
 
 # Markup - Interface ==============================
 # "These scopes are used for theming the editor interface."
 
 'markup.normal' = { }
-'markup.normal.completion' = { } # "for completion doc popup ui"
-'markup.normal.raw' = { } # "for hover popup ui"
+'markup.normal.completion' = { } # For completion doc popup ui
+'markup.normal.raw' = { } # For hover popup ui
 
-'markup.heading' = { } #
-'markup.heading.completion' = { } # "for completion doc popup ui"
-'markup.heading.raw' = { } # "for hover popup ui"
+'markup.heading.completion' = { } # Headings for completion doc popup ui
+'markup.heading.raw' = { } # Headings for hover popup ui
 
-'markup.raw' = { } # ?
-'markup.raw.block' = { } # markdown code block (```)
-'markup.raw.inline' = { } # markdwon inline code (`<code>`)
+'markup.raw' = { } # Code block in markdown 
+'markup.raw.block' = { } # Multiline (```) codeblock in markdown
+'markup.raw.inline' = { } # `Inline code block` in markdown
 'markup.raw.inline.completion' = { } # ?
 'markup.raw.inline.hover' = { } # ?
 
