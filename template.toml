@@ -65,9 +65,9 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 # SYNTAX HIGHLIGHTING ==============================
 # All the keys here are Treesitter scopes.
 
-'property' = { }
-'special' = { }
-'module' = { } 
+'property' = { } # Regex group names.
+'special' = { } # Special symbols e.g `?` in Rust, `...` in Hare.
+'module' = { } # Unclear, used for Heex module.
 'attribute' = { } # Class attributes, html tag attributes.
 
 'type' = { } # Variable type, like integer or string, including program defined classes, structs etc..
