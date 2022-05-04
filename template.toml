@@ -81,10 +81,9 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 'constant.builtin.boolean' = { } # True or False.
 'constant.character' = { } # Constant of character type.
 'constant.character.escape' = { } # escape codes like \n.
-'constant.numeric' = { }
-'constant.number'  = { } # constant integer or float value.
-'constant.number.integer' = { } # constant integer value.
-'constant.number.float' = { } # constant float value.
+'constant.numeric'  = { } # constant integer or float value.
+'constant.numeric.integer' = { } # constant integer value.
+'constant.numeric.float' = { } # constant float value.
 
 'string' = { } # String literal.
 'string.regexp' = { } # Regular expression literal.
