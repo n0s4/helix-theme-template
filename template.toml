@@ -51,6 +51,10 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 'ui.statusline' = { } # Status line.
 'ui.statusline.inactive' = { } # Status line in unfocused windows.
 
+"ui.statusline.normal" = { } # Statusline mode during normal mode (only if editor.color-modes is enabled)
+"ui.statusline.insert" = { } # Statusline mode during insert mode (only if editor.color-modes is enabled)
+"ui.statusline.select" = { } # Statusline mode during select mode (only if editor.color-modes is enabled)
+
 'ui.help' = { } # `:command` descriptions above the command line.
 
 'ui.highlight' = { } # selected contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b).
