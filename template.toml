@@ -3,19 +3,15 @@
 #
 # NOTE: Keys default to the most specific parent value.
 #       e.g ui.cursor.primary > ui.cursor > ui
-#
-# Comments with a '?' are ones I haven't figured out yet.
-#
-# Comments with a '*' are ones I think are right, but
-# not 100% definite
+
+
 
 # GENERAL ==============================
 
 warning = { } # Editor warnings.
 error = { } # Editor errors, like mis-typing a command.
-info = { } # Code diagnostic info in gutter (LSP).
-# ? Difference between info and hint ?
-hint = { } # Code diagnostics hint in gutter (LSP).
+info = { } # Contextual info in diagnostic messages (LSP).
+hint = { } # Code diagnostics hints (LSP).
 diagnostic = { } # Code diagnostics in editing area (LSP).
 
 # UI ==============================
@@ -23,7 +19,6 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 
 'ui.background' = { } # Default background color.
 'ui.window' = { } # Window border between splits.
-
 'ui.gutter' = { } # Left gutter for diagnostics and breakpoints.
 
 'ui.text' = { } # Default text color.
@@ -45,12 +40,9 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 'ui.virtual' = { } # Namespace for additions to the editing area.
 'ui.virtual.ruler' = { } # Vertical rulers (colored columns in editing area).
 'ui.virtual.whitespace' = { } # Whitespace markers in editing area.
-# NOTE: Indent guides aren't yet added at the time of writing, but will be soon.
-'ui.virtual.indent-guide' = { } # Indentation guides.
 
 'ui.statusline' = { } # Status line.
 'ui.statusline.inactive' = { } # Status line in unfocused windows.
-
 "ui.statusline.normal" = { } # Statusline mode during normal mode (only if editor.color-modes is enabled)
 "ui.statusline.insert" = { } # Statusline mode during insert mode (only if editor.color-modes is enabled)
 "ui.statusline.select" = { } # Statusline mode during select mode (only if editor.color-modes is enabled)
@@ -71,7 +63,6 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 
 'property' = { } # Regex group names.
 'special' = { } # Special symbols e.g `?` in Rust, `...` in Hare.
-'module' = { } # Unclear, used for Heex module.
 'attribute' = { } # Class attributes, html tag attributes.
 
 'type' = { } # Variable type, like integer or string, including program defined classes, structs etc..
@@ -103,38 +94,38 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 
 'variable' = { } # Variable names.
 'variable.builtin' = { } # Language reserved variables: `this`, `self`, `super`, etc.
-'variable.parameter' = { } # Funtion parameters.
+'variable.parameter' = { } # Function parameters.
 'variable.other.member' = { } # Fields of composite data types (e.g. structs, unions).
-'variable.function' = { } # ?
 
-'label' = { } # Loop labels in rust.
+'label' = { } # Loop labels, among other things.
 
-'punctuation' = { } # (){}[]:;,.
-'punctuation.delimeter' = { } # Commas and colons.
+'punctuation' = { } # Any punctuation symbol.
+'punctuation.delimiter' = { } # Commas, colons or other delimiter depending on the language.
 'punctuation.bracket' = { } # Parentheses, angle brackets, etc.
 
 'keyword' = { } # Language reserved keywords.
 'keyword.control' = { } # Control keywords.
-'keyword.control.conditional' = { } # 'if', 'else', 'elif'.
-'keyword.control.repeat' = { } # 'for', 'while', 'loop'.
-'keyword.control.import' = { } # 'import', 'export' ('use'?).
-'keyword.control.return' = { } # 'return' in most languages.
-'keyword.control.exception' = { } # 'raise' in python.
-'keyword.operator' = { } # 'or', 'and', 'in'.
-'keyword.directive' = { } # Preprocessor directives (#if in C).
-'keyword.function' = { } # The keyword to define a funtion: 'def', 'fun', 'fn'.
+'keyword.control.conditional' = { } # `if`, `else`, `elif`.
+'keyword.control.repeat' = { } # `for`, `while`, `loop`.
+'keyword.control.import' = { } # `import`, `export` `use`.
+'keyword.control.return' = { } # `return` in most languages.
+'keyword.control.exception' = { } # `try`, `catch`, `raise`/`throw` and related.
+'keyword.operator' = { } # `or`, `and`, `in`.
+'keyword.directive' = { } # Preprocessor directives (#if in C...).
+'keyword.function' = { } # The keyword to define a function: 'def', 'fun', 'fn'.
 
-'operator' = { } # Logical (&&, ||) and - I assume - Mathematical (+, %) operators
+'operator' = { } # Logical, mathematical, and other operators.
 
 'function' = { }
 'function.builtin' = { }
 'function.method' = { } # Class / Struct methods.
-'function.macro' = { } # Like macros in rust.
-'function.special' = { } # Preprocessor in C.
+'function.macro' = { }
+'function.special' = { } # Preprocessor function in C.
 
-'tag' = { } # As in <body> for html.
+'tag' = { } # As in <body> for html, css tags.
+'tag.error' = { } # Erroneous closing html tags.
 
-'namespace' = { } # * Namespace keyword in java, C#, etc.
+'namespace' = { } # Namespace or module identifier.
 
 
 # Markup ==============================
@@ -185,9 +176,9 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 'diff.plus' = { } # Additions.
 'diff.minus' = { } # Deletions.
 'diff.delta' = { } # Modifications.
-'diff.delta.moved' = { } # Renamed or moved files / changes.
+'diff.delta.moved' = { } # Renamed or moved files.
 
 
 [palette] # Define your custom colors here.
-color = '#ffffff'
+white = '#ffffff'
 
