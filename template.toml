@@ -42,6 +42,7 @@ diagnostic = { } # Code diagnostics in editing area (LSP).
 'ui.virtual.whitespace' = { } # Whitespace markers in editing area.
 
 'ui.statusline' = { } # Status line.
+'ui.statusline.active' = { } # Status line in focused windows.
 'ui.statusline.inactive' = { } # Status line in unfocused windows.
 "ui.statusline.normal" = { } # Statusline mode during normal mode (only if editor.color-modes is enabled)
 "ui.statusline.insert" = { } # Statusline mode during insert mode (only if editor.color-modes is enabled)
